@@ -107,7 +107,7 @@ module Streamsb
     def connection
       @connection ||= Faraday.new do |conn|
         conn.url_prefix = API_ENDPOINT
-        conn.request :url_encode
+        conn.request :json
         conn.response :json, content_type: "application/json"
         conn.adapter adapter
       end
