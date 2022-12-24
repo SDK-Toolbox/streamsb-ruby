@@ -29,6 +29,14 @@ module Streamsb
       request(http_method: :post, endpoint: "account/stats", params: data)
     end
 
+    def file_info(file_code)
+      data = {
+        key: api_key,
+        file_code: file_code
+      }
+      request(http_method: :post, endpoint: "file/info", params: data)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end

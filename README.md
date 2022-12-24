@@ -36,6 +36,14 @@ account_info = @client.account_info
 account_info = @client.account_stats
 ```
 
+### 2. File
+
+#### 2.1 Info File
+
+```ruby
+file_info = @client.file_info(file_code)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
