@@ -78,6 +78,26 @@ module Streamsb
       request(http_method: :get, endpoint: "file/direct", params: data)
     end
 
+    def get_direct_quality(file_code, quality = nil)
+      data = {
+        key: api_key,
+        file_code: file_code,
+        q: quality
+      }
+
+      request(http_method: :get, endpoint: "file/direct_link", params: data)
+    end
+
+    def set_folder(file_code, folder_id)
+      data = {
+        key: api_key,
+        file_code: file_code,
+        folder_id: folder_id
+      }
+
+      request(http_method: :get, endpoint: "file/set_folder", params: data)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end

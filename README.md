@@ -44,7 +44,7 @@ account_info = @client.account_stats
 file_info = @client.file_info(file_code)
 ```
 
-- `file_code`: code for file stored in StreamSB `REQUIRED`
+- `file_code`: file code `REQUIRED`
 
 #### 2.2 Rename File
 
@@ -52,22 +52,22 @@ file_info = @client.file_info(file_code)
 rename_file = @client.rename_file(file_code, title, name)
 ```
 
-- `file_code`: code for file stored in StreamSB `REQUIRED`
+- `file_code`: file code `REQUIRED`
 - `title`: new file title `REQUIRED`
 - `name`: new file name `REQUIRED`
 
 #### 2.3 Clone File
 
 ```ruby
-file_info = @client.clone_file(file_code)
+clone_info = @client.clone_file(file_code)
 ```
 
-- `file_code`: code for file to be cloned `REQUIRED`
+- `file_code`: file code `REQUIRED`
 
-#### 2.4 Clone File
+#### 2.4 List Files
 
 ```ruby
-file_info = @client.list_files(page, per_page, fld_id, is_public, created, title)
+file_list = @client.list_files(page, per_page, fld_id, is_public, created, title)
 
 ```
 
@@ -81,10 +81,26 @@ file_info = @client.list_files(page, per_page, fld_id, is_public, created, title
 #### 2.5 Get Direct All
 
 ```ruby
-file_info = @client.get_direct_all(file_code)
+direct_all = @client.get_direct_all(file_code)
 ```
 
 - `file_code`: file code `REQUIRED`
+
+#### 2.6 Get Direct Quality
+
+```ruby
+direct_quality = @client.get_direct_quality(file_code, quality)
+```
+
+- `file_code`: file code `REQUIRED`
+- `quality`: video quality if exist, possible values: `n` , `h` , `l` `OPTIONAL`
+
+```ruby
+set_folder = @client.set_folder(file_code, folder_id)
+```
+
+- `file_code`: file code `REQUIRED`
+- `folder_id`: folder id `REQUIRED`
 
 ## Development
 
