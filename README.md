@@ -1,22 +1,34 @@
-# Streamsb
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/streamsb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# Streamsb Ruby Client
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add streamsb
+    bundle add streamsb
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install streamsb
+    gem install streamsb
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialize Streamsb Client
+
+```ruby
+require "streamsb"
+
+@client = Streamsb::Client.new(api_key: ENV['STREAMSB_API_KEY'])
+```
+
+Make API calls using the @client object
+
+### 1. Account
+
+#### 1.1 Info
+
+```ruby
+account_info = @client.account_info
+```
 
 ## Development
 
@@ -26,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/streamsb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/streamsb/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at <https://github.com/[USERNAME>]/streamsb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/streamsb/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
