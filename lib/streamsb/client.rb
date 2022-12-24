@@ -47,6 +47,14 @@ module Streamsb
       request(http_method: :post, endpoint: "file/rename", params: data)
     end
 
+    def clone_file(file_code)
+      data = {
+        key: api_key,
+        file_code: file_code
+      }
+      request(http_method: :post, endpoint: "file/clone", params: data)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
@@ -62,7 +70,7 @@ module Streamsb
       end
     end
 
-    def request(http_method:, endpoint:, params: {})
+    def request(http_method:, endpoint:, params: {key: api_key})
       response = connection.send(http_method, endpoint, params)
       OpenStruct.new(response.body)
     end

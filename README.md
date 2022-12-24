@@ -56,6 +56,14 @@ rename_file = @client.rename_file(file_code, title, name)
 - `title`: new file title `REQUIRED`
 - `name`: new file name `REQUIRED`
 
+#### 2.1 Clone File
+
+```ruby
+file_info = @client.clone_file(file_code)
+```
+
+- `file_code`: code for file to be cloned `REQUIRED`
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
