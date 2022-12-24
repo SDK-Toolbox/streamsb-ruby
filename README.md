@@ -46,7 +46,7 @@ file_info = @client.file_info(file_code)
 
 - `file_code`: code for file stored in StreamSB `REQUIRED`
 
-#### 2.1 Rename File
+#### 2.2 Rename File
 
 ```ruby
 rename_file = @client.rename_file(file_code, title, name)
@@ -56,13 +56,29 @@ rename_file = @client.rename_file(file_code, title, name)
 - `title`: new file title `REQUIRED`
 - `name`: new file name `REQUIRED`
 
-#### 2.1 Clone File
+#### 2.3 Clone File
 
 ```ruby
 file_info = @client.clone_file(file_code)
 ```
 
 - `file_code`: code for file to be cloned `REQUIRED`
+
+
+#### 2.4 Clone File
+
+```ruby
+file_info = @client.list_files(page, per_page, fld_id, is_public, created, title)
+
+```
+
+- `page`: page number `OPTIONAL`,
+- `per_page`: results per page `OPTIONAL`
+- `fld_id`: folder id `OPTIONAL`
+- `is_public`: show public (1) or private (0) files only `OPTIONAL`
+- `created`: show only files uploaded after timestamp `OPTIONAL`
+- `title`: filter video titles `OPTIONAL`
+
 
 ## Development
 

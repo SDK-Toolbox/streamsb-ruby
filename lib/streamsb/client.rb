@@ -55,6 +55,20 @@ module Streamsb
       request(http_method: :post, endpoint: "file/clone", params: data)
     end
 
+    def list_files(page = nil, per_page = nil, fld_id = nil, is_public = nil, created = nil, title = nil)
+      data = {
+        key: api_key,
+        page: page,
+        per_page: per_page,
+        fld_id: fld_id,
+        public: is_public,
+        created: created,
+        title: title
+      }
+
+      request(http_method: :post, endpoint: "file/list", params: data)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
@@ -70,7 +84,7 @@ module Streamsb
       end
     end
 
-    def request(http_method:, endpoint:, params: {key: api_key})
+    def request(http_method:, endpoint:, params: { key: api_key })
       response = connection.send(http_method, endpoint, params)
       OpenStruct.new(response.body)
     end
