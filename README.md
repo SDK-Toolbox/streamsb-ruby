@@ -38,11 +38,23 @@ account_info = @client.account_stats
 
 ### 2. File
 
-#### 2.1 Info File
+#### 2.1 File Info
 
 ```ruby
 file_info = @client.file_info(file_code)
 ```
+
+- `file_code`: code for file stored in StreamSB `REQUIRED`
+
+#### 2.1 Rename File
+
+```ruby
+rename_file = @client.rename_file(file_code, title, name)
+```
+
+- `file_code`: code for file stored in StreamSB `REQUIRED`
+- `title`: new file title `REQUIRED`
+- `name`: new file name `REQUIRED`
 
 ## Development
 

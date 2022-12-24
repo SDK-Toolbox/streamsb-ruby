@@ -37,6 +37,16 @@ module Streamsb
       request(http_method: :post, endpoint: "file/info", params: data)
     end
 
+    def rename_file(file_code, title, name)
+      data = {
+        key: api_key,
+        file_code: file_code,
+        title: title,
+        name: name
+      }
+      request(http_method: :post, endpoint: "file/rename", params: data)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
