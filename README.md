@@ -64,7 +64,6 @@ file_info = @client.clone_file(file_code)
 
 - `file_code`: code for file to be cloned `REQUIRED`
 
-
 #### 2.4 Clone File
 
 ```ruby
@@ -79,6 +78,13 @@ file_info = @client.list_files(page, per_page, fld_id, is_public, created, title
 - `created`: show only files uploaded after timestamp `OPTIONAL`
 - `title`: filter video titles `OPTIONAL`
 
+#### 2.5 Get Direct All
+
+```ruby
+file_info = @client.get_direct_all(file_code)
+```
+
+- `file_code`: file code `REQUIRED`
 
 ## Development
 

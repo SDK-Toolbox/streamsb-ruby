@@ -19,14 +19,14 @@ module Streamsb
       data = {
         key: api_key
       }
-      request(http_method: :post, endpoint: "account/info", params: data)
+      request(http_method: :get, endpoint: "account/info", params: data)
     end
 
     def account_stats
       data = {
         key: api_key
       }
-      request(http_method: :post, endpoint: "account/stats", params: data)
+      request(http_method: :get, endpoint: "account/stats", params: data)
     end
 
     def file_info(file_code)
@@ -34,7 +34,7 @@ module Streamsb
         key: api_key,
         file_code: file_code
       }
-      request(http_method: :post, endpoint: "file/info", params: data)
+      request(http_method: :get, endpoint: "file/info", params: data)
     end
 
     def rename_file(file_code, title, name)
@@ -44,7 +44,7 @@ module Streamsb
         title: title,
         name: name
       }
-      request(http_method: :post, endpoint: "file/rename", params: data)
+      request(http_method: :get, endpoint: "file/rename", params: data)
     end
 
     def clone_file(file_code)
@@ -52,7 +52,7 @@ module Streamsb
         key: api_key,
         file_code: file_code
       }
-      request(http_method: :post, endpoint: "file/clone", params: data)
+      request(http_method: :get, endpoint: "file/clone", params: data)
     end
 
     def list_files(page = nil, per_page = nil, fld_id = nil, is_public = nil, created = nil, title = nil)
@@ -66,7 +66,16 @@ module Streamsb
         title: title
       }
 
-      request(http_method: :post, endpoint: "file/list", params: data)
+      request(http_method: :get, endpoint: "file/list", params: data)
+    end
+
+    def get_direct_all(file_code)
+      data = {
+        key: api_key,
+        file_code: file_code
+      }
+
+      request(http_method: :get, endpoint: "file/direct", params: data)
     end
 
     def inspect
