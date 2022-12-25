@@ -114,6 +114,10 @@ module Streamsb
       request(http_method: :get, endpoint: "folder/create", params: params)
     end
 
+    def upload_server
+      request(http_method: :get, endpoint: "upload/server", params: payload)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end

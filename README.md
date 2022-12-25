@@ -123,6 +123,11 @@ files = @client.create_folder(name, folder_id)
 - `name`: folder name `REQUIRED`
 - `folder_id`: parent folder id `OPTIONAL`
 
+## 4. Upload File
+
+### 4.1 Get Server
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/ochiengotieno304/streamsb-ruby>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/ochiengotieno304/streamsb-ruby/blob/main/CODE_OF_CONDUCT.md).
