@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    streamsb (0.1.1)
+    streamsb (0.2.1)
       faraday (~> 1.7)
       faraday_middleware (~> 1.2)
       json
