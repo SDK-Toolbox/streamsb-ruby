@@ -95,6 +95,8 @@ direct_quality = @client.get_direct_quality(file_code, quality)
 - `file_code`: file code `REQUIRED`
 - `quality`: video quality if exist, possible values: `n` , `h` , `l` `OPTIONAL`
 
+### 2.7 Set Folder
+
 ```ruby
 set_folder = @client.set_folder(file_code, folder_id)
 ```
@@ -102,15 +104,19 @@ set_folder = @client.set_folder(file_code, folder_id)
 - `file_code`: file code `REQUIRED`
 - `folder_id`: folder id `REQUIRED`
 
-## Development
+## 3. Folder
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### 3.1 List Files
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+files = @client.folder_list(folder_id)
+```
+
+- `folder_id`: file code `REQUIRED`
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at <https://github.com/[USERNAME>]/streamsb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/streamsb/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at <https://github.com/ochiengotieno304/streamsb-ruby>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/ochiengotieno304/streamsb-ruby/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -118,4 +124,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Streamsb project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/streamsb/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Streamsb project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/ochiengotieno304/streamsb-ruby/blob/main/CODE_OF_CONDUCT.md).
