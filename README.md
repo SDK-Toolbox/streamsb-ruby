@@ -10,6 +10,10 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     gem install streamsb
 
+Alternatively, you can opt for Github's installation, add this to your gem file:
+
+    gem 'streamsb', github: 'ochiengotieno304/streamsb-ruby'
+
 ## Usage
 
 ### Initialize Streamsb Client
