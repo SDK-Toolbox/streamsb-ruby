@@ -127,6 +127,10 @@ module Streamsb
       request(http_method: :get, endpoint: "upload/url", params: params)
     end
 
+    def list_url
+      request(http_method: :get, endpoint: "url/list", params: payload)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
