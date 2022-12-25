@@ -16,48 +16,44 @@ module Streamsb
     end
 
     def account_info
-      data = {
-        key: api_key
-      }
-      request(http_method: :get, endpoint: "account/info", params: data)
+      request(http_method: :get, endpoint: "account/info", params: payload)
     end
 
     def account_stats
-      data = {
-        key: api_key
-      }
-      request(http_method: :get, endpoint: "account/stats", params: data)
+      request(http_method: :get, endpoint: "account/stats", params: payload)
     end
 
     def file_info(file_code)
       data = {
-        key: api_key,
         file_code: file_code
       }
-      request(http_method: :get, endpoint: "file/info", params: data)
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/info", params: params)
     end
 
     def rename_file(file_code, title, name)
       data = {
-        key: api_key,
         file_code: file_code,
         title: title,
         name: name
       }
-      request(http_method: :get, endpoint: "file/rename", params: data)
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/rename", params: params)
     end
 
     def clone_file(file_code)
       data = {
-        key: api_key,
         file_code: file_code
       }
-      request(http_method: :get, endpoint: "file/clone", params: data)
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/clone", params: params)
     end
 
     def list_files(page = nil, per_page = nil, fld_id = nil, is_public = nil, created = nil, title = nil)
       data = {
-        key: api_key,
         page: page,
         per_page: per_page,
         fld_id: fld_id,
@@ -66,43 +62,52 @@ module Streamsb
         title: title
       }
 
-      request(http_method: :get, endpoint: "file/list", params: data)
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/list", params: params)
     end
 
     def get_direct_all(file_code)
       data = {
-        key: api_key,
         file_code: file_code
       }
 
-      request(http_method: :get, endpoint: "file/direct", params: data)
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/direct", params: params)
     end
 
     def get_direct_quality(file_code, quality = nil)
       data = {
-        key: api_key,
         file_code: file_code,
         q: quality
       }
 
-      request(http_method: :get, endpoint: "file/direct_link", params: data)
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/direct_link", params: params)
     end
 
     def set_folder(file_code, folder_id)
       data = {
-        key: api_key,
         file_code: file_code,
         folder_id: folder_id
       }
 
-      request(http_method: :get, endpoint: "file/set_folder", params: data)
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/set_folder", params: params)
     end
+
+    def folder_list(folder_id); end
 
     def inspect
       "#<Streamsb::Client>"
     end
 
     private
+
+    def payload
+      {
+        key: api_key
+      }
+    end
 
     def connection
       @connection ||= Faraday.new do |conn|
