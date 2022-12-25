@@ -131,6 +131,15 @@ module Streamsb
       request(http_method: :get, endpoint: "url/list", params: payload)
     end
 
+    def url_status(file_code)
+      data = {
+        file_code: file_code
+      }
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "file/url_uploads", params: params)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end

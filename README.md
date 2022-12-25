@@ -152,6 +152,14 @@ url = @client.add_url(url)
 urls = @client.list_url
 ```
 
+### 5.2 Status
+
+```ruby
+status = @client.url_status(file_code)
+```
+
+- `file_code`: file_code `REQUIRED`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/ochiengotieno304/streamsb-ruby>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/ochiengotieno304/streamsb-ruby/blob/main/CODE_OF_CONDUCT.md).
