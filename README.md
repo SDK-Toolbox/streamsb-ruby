@@ -112,7 +112,16 @@ set_folder = @client.set_folder(file_code, folder_id)
 files = @client.folder_list(folder_id)
 ```
 
-- `folder_id`: file code `REQUIRED`
+- `folder_id`: folder id `REQUIRED`
+
+### 3.2 Create Folder
+
+```ruby
+files = @client.create_folder(name, folder_id)
+```
+
+- `name`: folder name `REQUIRED`
+- `folder_id`: parent folder id `OPTIONAL`
 
 ## Contributing
 

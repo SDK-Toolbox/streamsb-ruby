@@ -104,6 +104,16 @@ module Streamsb
       request(http_method: :get, endpoint: "folder/list", params: params)
     end
 
+    def create_folder(name, folder_id = nil)
+      data = {
+        name: name,
+        fld_id: folder_id
+      }
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "folder/create", params: params)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
