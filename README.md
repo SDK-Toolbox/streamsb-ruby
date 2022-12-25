@@ -134,7 +134,7 @@ upload_server = @client.upload_server
 ### 4.2 Upload File
 
 > **Note:**
-> To be implemented
+> Will be in later realeases
 
 ## 5. Upload Url
 
@@ -146,19 +146,24 @@ url = @client.add_url(url)
 
 - `url`: upload url `REQUIRED`
 
-### 5.1 List Url
+### 5.2 List Url
 
 ```ruby
 urls = @client.list_url
 ```
 
-### 5.2 Status
+### 5.3 Status
 
 ```ruby
 status = @client.url_status(file_code)
 ```
 
 - `file_code`: file_code `REQUIRED`
+
+### 5.4 Action
+
+> **Note:**
+> Will be in later releases
 
 ## Contributing
 
