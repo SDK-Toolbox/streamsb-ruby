@@ -117,7 +117,7 @@ files = @client.folder_list(folder_id)
 ### 3.2 Create Folder
 
 ```ruby
-files = @client.create_folder(name, folder_id)
+folder = @client.create_folder(name, folder_id)
 ```
 
 - `name`: folder name `REQUIRED`
@@ -127,6 +127,26 @@ files = @client.create_folder(name, folder_id)
 
 ### 4.1 Get Server
 
+```ruby
+upload_server = @client.upload_server
+```
+
+### 4.2 Upload File
+
+> **Note:**
+> To be implemented
+
+
+
+## 5. Upload Url
+
+### 5.1 Add Url
+
+```ruby
+url = @client.add_url(url)
+```
+
+- `url`: upload url `REQUIRED`
 
 ## Contributing
 

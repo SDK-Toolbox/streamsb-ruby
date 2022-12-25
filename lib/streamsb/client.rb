@@ -118,6 +118,15 @@ module Streamsb
       request(http_method: :get, endpoint: "upload/server", params: payload)
     end
 
+    def add_url(url)
+      data = {
+        url: url
+      }
+
+      params = payload.merge!(data)
+      request(http_method: :get, endpoint: "upload/url", params: params)
+    end
+
     def inspect
       "#<Streamsb::Client>"
     end
