@@ -1,5 +1,7 @@
 # Streamsb Ruby Client
 
+[![Gem Version](https://badge.fury.io/rb/streamsb.svg)](https://badge.fury.io/rb/streamsb)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
